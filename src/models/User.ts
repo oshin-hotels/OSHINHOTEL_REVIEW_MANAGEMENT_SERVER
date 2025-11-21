@@ -1,16 +1,16 @@
 // src/models/User.ts
-import mongoose, { Schema, Document } from 'mongoose';
+import mongoose, { Schema, Document, Types } from 'mongoose';
 import bcrypt from 'bcryptjs';
 
 export interface IUser {
-  _id: mongoose.Schema.Types.ObjectId;
+  _id: Types.ObjectId;
   fullName: string;
   username: string;
   password?: string;
   // ✅ ADDED 'staff_cfc'
   role: 'staff' | 'admin' | 'viewer' | 'staff_room' | 'staff_f&b' | 'staff_cfc';
   isActive: boolean;
-  hotelId?: mongoose.Schema.Types.ObjectId;
+  hotelId?: Types.ObjectId;
 }
 
 const userSchema = new Schema<IUser>({

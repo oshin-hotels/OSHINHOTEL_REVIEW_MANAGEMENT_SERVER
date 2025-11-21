@@ -28,9 +28,8 @@ const app = express();
 // --- 2. GLOBAL MIDDLEWARE ---
 app.use(helmet());
 const allowedOrigins = [
-  'https://oshin-admin-panel-one.vercel.app',
-  'https://www.oshin-admin-panel-one.vercel.app',
-  'http://localhost:5173',
+ process.env.CORS_ORIGIN,
+ "http://localhost:5173",
   'null' // ✅ for mobile webviews and cross-device sharing
 ];
 

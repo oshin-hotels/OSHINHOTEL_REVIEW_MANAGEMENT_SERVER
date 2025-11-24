@@ -92,6 +92,11 @@ app.use(
 app.get("/api/health", (req, res) => {
   res.status(200).json({ status: "ok", message: "Server is awake!" });
 });
+
+app.get("/", (req: Request, res: Response) => {
+  res.send("OSHIN HOTEL REVIEW MANAGEMENT SERVER is running...");
+}
+);
 // --- 5. SERVE FRONTEND (React Build) ---
 const __dirname1 = path.resolve(); // ✅ get absolute path safely
 

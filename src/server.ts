@@ -25,6 +25,8 @@ dotenv.config();
 
 const app = express();
 
+app.set("trust proxy", 1); 
+
 // --- 2. GLOBAL MIDDLEWARE ---
 app.use(helmet());
 const allowedOrigins = [

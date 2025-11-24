@@ -22,7 +22,7 @@ const signToken = (
   hotelId: mongoose.Schema.Types.ObjectId | null | undefined
 ): string => {
   const secret: Secret = process.env.JWT_SECRET || 'default_secret_key';
-  const expiresIn = (process.env.JWT_EXPIRES_IN?.trim() || '90d') as SignOptions['expiresIn'];
+  const expiresIn = (process.env.JWT_EXPIRES_IN?.trim() || "90d") as SignOptions["expiresIn"];
 
   return jwt.sign({ id, role, hotelId }, secret, { expiresIn });
 };
